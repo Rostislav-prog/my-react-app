@@ -2,6 +2,8 @@ import './App.css'
 import { Message } from './Message'
 
 export const App = () => {
+  const text = 'New message'
+
   return (
     <>
       <div className='App'>
@@ -11,7 +13,7 @@ export const App = () => {
       </div>
       <div className='Message'>
         <body>
-          <Message text='New message!' />
+          <Message text={text} />
         </body>
       </div>
     </>
