@@ -1,8 +1,9 @@
-import './App.css'
+import './style/App.css'
 import { Message } from './Message'
 import { MessageList } from './MessageList'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import { GeneratorId } from './GeneratorId'
 
 export const App = () => {
   const [list, setList] = useState([])
@@ -11,7 +12,11 @@ export const App = () => {
     if (list.length > 0 && list[list.length - 1].autor !== 'Bot') {
       const newList = [
         ...list,
-        { autor: 'Bot', text: 'Ваше cообщение отправлено' },
+        {
+          autor: 'Bot',
+          text: 'Ваше cообщение отправлено',
+          id: GeneratorId(),
+        },
       ]
       setList(newList)
     }

@@ -1,4 +1,4 @@
-import './Message.css'
+import './style/Message.css'
 
 export const Message = props => {
   return (
@@ -6,7 +6,7 @@ export const Message = props => {
       <div className='Message-header'>
         {props.list.map(i => {
           return (
-            <p>
+            <p key={i.id}>
               {i.autor} : {i.text}
             </p>
           )

@@ -1,12 +1,16 @@
-import { useState } from 'react'
-import './MessageList.css'
+import { useRef, useState } from 'react'
+import './style/MessageList.css'
+import { GeneratorId } from './GeneratorId'
 
 export const MessageList = props => {
   const [autor, setAutor] = useState('')
   const [text, setText] = useState('')
 
   const addItem = () => {
-    const newList = [...props.list, { autor: autor, text: text }]
+    const newList = [
+      ...props.list,
+      { autor: autor, text: text, id: GeneratorId() },
+    ]
     props.setList(newList)
   }
 
