@@ -1,8 +1,25 @@
 import './App.css'
 import { Message } from './Message'
+import { MessageList } from './MessageList'
+import { useState } from 'react'
+import { useEffect } from 'react'
 
 export const App = () => {
-  const text = 'New message'
+  const [list, setList] = useState([])
+
+  const Robot = () => {
+    if (list.length > 0 && list[list.length - 1].autor !== 'Bot') {
+      const newList = [
+        ...list,
+        { autor: 'Bot', text: 'Ваше cообщение отправлено' },
+      ]
+      setList(newList)
+    }
+  }
+
+  useEffect(() => {
+    setTimeout(Robot, 2000)
+  }, [list])
 
   return (
     <>
@@ -12,9 +29,10 @@ export const App = () => {
         </header>
       </div>
       <div className='Message'>
-        <body>
-          <Message text={text} />
-        </body>
+        <div>
+          <Message list={list} />
+          <MessageList list={list} setList={setList} />
+        </div>
       </div>
     </>
   )
