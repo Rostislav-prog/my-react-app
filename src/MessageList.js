@@ -1,10 +1,14 @@
 import { useRef, useState } from 'react'
 import './style/MessageList.css'
 import { GeneratorId } from './GeneratorId'
+import React from 'react'
 
 export const MessageList = props => {
   const [autor, setAutor] = useState('')
   const [text, setText] = useState('')
+
+  const autorInput = React.createRef()
+  const textInput = React.createRef()
 
   const addItem = () => {
     const newList = [
@@ -12,6 +16,9 @@ export const MessageList = props => {
       { autor: autor, text: text, id: GeneratorId() },
     ]
     props.setList(newList)
+    autorInput.current.focus()
+    autorInput.current.value = ''
+    textInput.current.value = ''
   }
 
   return (
@@ -24,6 +31,7 @@ export const MessageList = props => {
           placeholder='Autor'
           type='text'
           onChange={e => setAutor(e.target.value)}
+          ref={autorInput}
         />
 
         <input
@@ -32,6 +40,7 @@ export const MessageList = props => {
           placeholder='Text'
           type='text'
           onChange={e => setText(e.target.value)}
+          ref={textInput}
         />
 
         <button className='MessageList-button' onClick={addItem}>
