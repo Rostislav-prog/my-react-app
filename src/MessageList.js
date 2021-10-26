@@ -1,14 +1,13 @@
 import { useRef, useState } from 'react'
 import './style/MessageList.css'
 import { GeneratorId } from './GeneratorId'
-import React from 'react'
 
 export const MessageList = props => {
   const [autor, setAutor] = useState('')
   const [text, setText] = useState('')
 
-  const autorInput = React.createRef()
-  const textInput = React.createRef()
+  const autorInput = useRef(null)
+  const textInput = useRef(null)
 
   const addItem = () => {
     const newList = [
