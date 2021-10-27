@@ -7,7 +7,6 @@ export const MessageList = props => {
   const [text, setText] = useState('')
 
   const autorInput = useRef(null)
-  const textInput = useRef(null)
 
   const addItem = () => {
     const newList = [
@@ -15,9 +14,9 @@ export const MessageList = props => {
       { autor: autor, text: text, id: GeneratorId() },
     ]
     props.setList(newList)
+    setAutor('')
+    setText('')
     autorInput.current.focus()
-    autorInput.current.value = ''
-    textInput.current.value = ''
   }
 
   return (
@@ -31,6 +30,7 @@ export const MessageList = props => {
           type='text'
           onChange={e => setAutor(e.target.value)}
           ref={autorInput}
+          value={autor}
         />
 
         <input
@@ -39,7 +39,7 @@ export const MessageList = props => {
           placeholder='Text'
           type='text'
           onChange={e => setText(e.target.value)}
-          ref={textInput}
+          value={text}
         />
 
         <button className='MessageList-button' onClick={addItem}>
