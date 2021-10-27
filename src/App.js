@@ -23,7 +23,7 @@ export const App = () => {
   }
 
   useEffect(() => {
-    setTimeout(Robot, 2000)
+    setTimeout(Robot, 1000)
   }, [list])
 
   return (

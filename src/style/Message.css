@@ -1,14 +1,22 @@
 .Message {
   text-align: center;
+  background-color: #7896d1;
 }
 
 .Message-header {
   background-color: #7896d1;
-  min-height: 40vh;
+  /* min-height: 40vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  position: absolute;
+  /* top: 0; */
+  left: 0;
+  bottom: 0;
+  right: 0;
+  /* overflow: hidden; */
+  z-index: -1;
 }
