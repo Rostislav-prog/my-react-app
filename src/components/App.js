@@ -1,4 +1,4 @@
-import './style/App.css'
+import './../style/App.css'
 import { Message } from './Message'
 import { MessageList } from './MessageList'
 import { useState } from 'react'

@@ -1,9 +1,10 @@
 .MessageList {
   text-align: center;
+  min-height: 40vh;
 }
 
 .MessageList-header {
-  background-color: #334363;
+  background-color: #cacfd8;
   min-height: 40vh;
   display: flex;
   flex-direction: column;
