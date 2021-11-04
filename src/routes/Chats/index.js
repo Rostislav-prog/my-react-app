@@ -1,11 +1,11 @@
-import './../style/App.css'
-import { Message } from './Message'
-import { MessageList } from './MessageList'
+// import './../../style/App.css'
+import { Message } from './../../components/Message'
+import { MessageList } from './../../components/MessageList'
 import { useState } from 'react'
 import { useEffect } from 'react'
-import { GeneratorId } from './GeneratorId'
+import { GeneratorId } from '../../components/GeneratorId'
 
-export const App = () => {
+export const Chats = () => {
   const [list, setList] = useState([])
 
   const Robot = () => {
@@ -27,18 +27,11 @@ export const App = () => {
   }, [list])
 
   return (
-    <>
-      <div className='App'>
-        <header className='App-header'>
-          <p>My react app</p>
-        </header>
+    <div className='Message'>
+      <div>
+        <Message list={list} />
+        <MessageList list={list} setList={setList} />
       </div>
-      <div className='Message'>
-        <div>
-          <Message list={list} />
-          <MessageList list={list} setList={setList} />
-        </div>
-      </div>
-    </>
+    </div>
   )
 }
