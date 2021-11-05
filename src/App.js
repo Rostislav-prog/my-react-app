@@ -1,11 +1,11 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import { Home } from '../routes/Home/index'
-import { Profile } from '../routes/Profile/'
-import { Chats } from '../routes/Chats/index'
-import { NotFound } from '../routes/NotFound/index'
-import { SimpleMenu } from './Menu'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { Home } from './routes/Home/index'
+import { Profile } from './routes/Profile/index'
+import { Chats } from './routes/Chats/index'
+import { NotFound } from './routes/NotFound/index'
+import { SimpleMenu } from './components/Menu'
 
-export const Routes = () => {
+export const App = () => {
   return (
     <BrowserRouter>
       <SimpleMenu />

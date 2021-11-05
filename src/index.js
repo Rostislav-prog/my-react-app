@@ -1,15 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './style/index.css'
+import { App } from './App'
 import reportWebVitals from './reportWebVitals'
-import { Routes } from './components/Routes'
-import Container from '@material-ui/core/Container'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Container>
-      <Routes />
-    </Container>
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 )

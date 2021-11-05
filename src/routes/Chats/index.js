@@ -1,37 +1,26 @@
-// import './../../style/App.css'
-import { Message } from './../../components/Message'
+import { ChatList } from './../../components/Chatlist'
 import { MessageList } from './../../components/MessageList'
-import { useState } from 'react'
-import { useEffect } from 'react'
-import { GeneratorId } from '../../components/GeneratorId'
+import Grid from '@material-ui/core/Grid'
+import { CHATS } from './../../components/mocks/chats'
+import { Switch, useParams } from 'react-router'
+import { Route } from 'react-router'
 
 export const Chats = () => {
-  const [list, setList] = useState([])
-
-  const Robot = () => {
-    if (list.length > 0 && list[list.length - 1].autor !== 'Bot') {
-      const newList = [
-        ...list,
-        {
-          autor: 'Bot',
-          text: 'Ваше cообщение отправлено',
-          id: GeneratorId(),
-        },
-      ]
-      setList(newList)
-    }
-  }
-
-  useEffect(() => {
-    setTimeout(Robot, 1000)
-  }, [list])
+  const chatId = useParams
+  console.log(chatId)
 
   return (
-    <div className='Message'>
-      <div>
-        <Message list={list} />
-        <MessageList list={list} setList={setList} />
-      </div>
-    </div>
+    <>
+      <Grid container spacing={3}>
+        <Grid item xs={6}>
+          <ChatList list={CHATS} />
+        </Grid>
+        <Grid item xs={6}>
+          <Switch>
+            <Route component={MessageList} puth='/chats/:chatId' />
+          </Switch>
+        </Grid>
+      </Grid>
+    </>
   )
 }
