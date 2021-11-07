@@ -1,13 +1,17 @@
-import { ChatList } from './../../components/Chatlist'
-import { MessageList } from './../../components/MessageList'
+import { ChatList } from '../../components/ChatList'
+import { MessageList } from '../../components/MessageList'
 import Grid from '@material-ui/core/Grid'
-import { CHATS } from './../../components/mocks/chats'
+import { CHATS } from '../../components/mocks/chats'
 import { Switch, useParams } from 'react-router'
 import { Route } from 'react-router'
 
+
+
+
 export const Chats = () => {
-  const chatId = useParams
-  console.log(chatId)
+  
+    const {chatId} = useParams()
+  console.log(`chatId ${chatId}`)
 
   return (
     <>

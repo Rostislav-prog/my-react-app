@@ -7,4 +7,4 @@ const createChatMock = i => ({
 
 export const CHATS = Array.from({ length: 3 }).map((_, i) => createChatMock(i))
 
-console.log(CHATS)
+

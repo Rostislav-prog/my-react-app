@@ -9,7 +9,9 @@ import { store } from './store'
 import { useParams } from 'react-router'
 
 export const App = () => {
-  // const { chatId } = useParams()
+  
+
+
 
   return (
     <Provider store={store}>
@@ -25,7 +27,7 @@ export const App = () => {
             <Profile />
           </Route>
 
-          <Route exact path='/chats/:chatId'>
+          <Route path='/chats'>
             <Chats />
           </Route>
 

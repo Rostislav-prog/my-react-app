@@ -6,6 +6,8 @@ import { useParams } from 'react-router'
 export const MessageList = () => {
   const [messageList, setMessagelist] = useState([])
 
+
+
   return (
     <>
       <MessageInput messageList={messageList} setMessagelist={setMessagelist} />

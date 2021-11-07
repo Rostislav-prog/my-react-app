@@ -23,6 +23,8 @@ export const MessageInput = ({ messageList, setMessagelist }) => {
   const [autor, setAutor] = useState('')
   const [text, setText] = useState('')
 
+ 
+
   const classes = useStyles()
 
   const autorInput = useRef(null)
