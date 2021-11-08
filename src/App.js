@@ -6,12 +6,8 @@ import { NotFound } from './routes/NotFound/index'
 import { SimpleMenu } from './components/Menu'
 import { Provider } from 'react-redux'
 import { store } from './store'
-import { useParams } from 'react-router'
 
 export const App = () => {
-  // const chatId = useParams()
-  // console.log(`chat ID ${chatId}`)
-
   return (
     <Provider store={store}>
       <BrowserRouter>
@@ -26,7 +22,7 @@ export const App = () => {
             <Profile />
           </Route>
 
-          <Route exact path='/chats'>
+          <Route path='/chats'>
             <Chats />
           </Route>
 

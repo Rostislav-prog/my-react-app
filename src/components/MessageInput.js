@@ -3,8 +3,6 @@ import { GeneratorId } from './GeneratorId'
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField'
 import { makeStyles } from '@material-ui/core/styles'
-import { useParams } from 'react-router'
-import { Message } from './Message'
 import { useEffect } from 'react'
 
 const useStyles = makeStyles(theme => ({
