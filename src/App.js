@@ -1,21 +1,36 @@
-import './App.css'
-import { Message } from './Message'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { Home } from './routes/Home/index'
+import { Profile } from './routes/Profile/index'
+import { Chats } from './routes/Chats/index'
+import { NotFound } from './routes/NotFound/index'
+import { SimpleMenu } from './components/Menu'
+import { Provider } from 'react-redux'
+import { store } from './store'
 
 export const App = () => {
-  const text = 'New message'
-
   return (
-    <>
-      <div className='App'>
-        <header className='App-header'>
-          <p>My react app</p>
-        </header>
-      </div>
-      <div className='Message'>
-        <body>
-          <Message text={text} />
-        </body>
-      </div>
-    </>
+    <Provider store={store}>
+      <BrowserRouter>
+        <SimpleMenu />
+
+        <Switch>
+          <Route exact path='/'>
+            <Home />
+          </Route>
+
+          <Route path='/profile'>
+            <Profile />
+          </Route>
+
+          <Route path='/chats'>
+            <Chats />
+          </Route>
+
+          <Route>
+            <NotFound />
+          </Route>
+        </Switch>
+      </BrowserRouter>
+    </Provider>
   )
 }
